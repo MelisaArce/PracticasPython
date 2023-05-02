@@ -46,8 +46,8 @@ def fecha (fecha: date, fecha_2: date):
             lista_fecha.append(objetos1)
             print(lista_fecha)
 #----------------------------------------------------------------------------#
-fecha1= date.fromisoformat(sys.argv )
-fecha2= date.fromisoformat(sys.argv)
+fecha1= date.fromisoformat(sys.argv[1])
+fecha2= date.fromisoformat(sys.argv[2])
 fecha(fecha1, fecha2)
 
 
