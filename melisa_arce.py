@@ -15,10 +15,10 @@ def factorial(numero:int)-> int:
     """
     Toma un numero y calcula el factorial de ese numero
     """
-    tope= 1  
+   
     multiplicador= 1  
 
-    for i in range (tope,numero+1):
+    for i in range (1,numero+1):
         multiplicador = multiplicador * i
 
     return multiplicador

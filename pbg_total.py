@@ -22,7 +22,7 @@ class Poblacion():
     indice_tiempo:date
     valor: float
     
-def getLectura()->list[Poblacion]:
+def get_lectura()->list[Poblacion]:
     """se obtiene una lista de objetos, con toda la informacion necesaria de Poblacion"""
 
     lista_provinciales = []
@@ -37,17 +37,38 @@ def getLectura()->list[Poblacion]:
     return lista_provinciales
 #---------------------------------------------------------------------------#
 
-def fecha (fecha: date, fecha_2: date):
+def fecha (fecha: date, fecha_2: date)-> list[Poblacion]:
     """se genera una nueva lista con los datos del PBG y sus fechas y se imprimen"""
     lista_fecha =[]
-    for objetos1 in getLectura():
+    for objetos1 in get_lectura():
         
-        if (fecha < objetos1.indice_tiempo < fecha_2 and 'PBG' in objetos1.actividad_producto_nombre):
+        if (fecha <= objetos1.indice_tiempo <= fecha_2 and 'PBG Total' in objetos1.actividad_producto_nombre):
             lista_fecha.append(objetos1)
-            print(lista_fecha)
+    return lista_fecha
 #----------------------------------------------------------------------------#
-fecha1= date.fromisoformat(sys.argv[1])
-fecha2= date.fromisoformat(sys.argv[2])
-fecha(fecha1, fecha2)
+def imprimir_priovincias(lista_provincia: set):
+    suma=0
+    lista= []
+    
+    for datos in nueva_lista:
+         for provincia in lista_provincia:
+            if provincia == str(datos.alcance_nombre) : 
+                suma = suma + float(datos.valor)
+            print("PBG Total:",provincia,"=", suma)
+#-----------------------------------------------------------------------------#
+
+fecha1= date.fromisoformat('1993-01-01')
+fecha2= date.fromisoformat('1996-01-01')
+nueva_lista = fecha(fecha1, fecha2)
+
+lista_provincias = set([x.alcance_nombre for x in nueva_lista])
+imprimir_priovincias(lista_provincias)
+
+
+
+
+
+
+
 
 
