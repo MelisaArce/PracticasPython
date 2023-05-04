@@ -56,8 +56,8 @@ def imprimir_priovincias(lista_provincia: set, lista_datos: list[Poblacion]):
         print("PBG Total:",provincia,"=", suma)
 #-----------------------------------------------------------------------------#
 
-fecha1= date.fromisoformat('1993-01-01')
-fecha2= date.fromisoformat('1996-01-01')
+fecha1= date.fromisoformat(sys.argv[1])
+fecha2= date.fromisoformat(sys.argv[2])
 nueva_lista = fecha(fecha1, fecha2)
 
 lista_provincias = set([x.alcance_nombre for x in nueva_lista])
